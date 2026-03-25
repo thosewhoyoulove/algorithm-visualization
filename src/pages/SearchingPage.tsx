@@ -141,7 +141,7 @@ export default function SearchingPage() {
           )}
         </div>
         {showCode && (
-          <div className="hidden lg:block w-80 border-l border-gray-200/80 dark:border-gray-800/80 p-4 overflow-y-auto bg-white dark:bg-gray-950">
+          <div className="hidden lg:block w-90 border-l border-gray-200/80 dark:border-gray-800/80 p-4 overflow-y-auto bg-white dark:bg-gray-950">
             <CodePanel
               code={selectedAlgo.pseudocode}
               activeLine={currentStep?.codeLine}

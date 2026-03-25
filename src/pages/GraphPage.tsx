@@ -114,7 +114,7 @@ export default function GraphPage() {
           </div>
         </div>
         {showCode && (
-          <div className="hidden lg:block w-80 border-l border-gray-200/80 dark:border-gray-800/80 bg-white dark:bg-gray-900 p-4 overflow-y-auto">
+          <div className="hidden lg:block w-90 border-l border-gray-200/80 dark:border-gray-800/80 bg-white dark:bg-gray-900 p-4 overflow-y-auto">
             <CodePanel
               code={algoInfo.pseudocode}
               activeLine={currentStep?.codeLine}
