@@ -42,20 +42,22 @@ export default function SortingPage() {
       ? currentStep.indices
       : [];
 
-  const sortedIndices = useMemo(() => {
-    if (!currentStep) return [];
-    if (currentStep.type === 'complete') return currentStep.indices;
-    const completedIndices: number[] = [];
-    const idx = controller.currentStepIndex;
-    for (let i = idx; i >= 0; i--) {
-      if (steps[i].type === 'complete') {
-        for (const ci of steps[i].indices) {
-          if (!completedIndices.includes(ci)) completedIndices.push(ci);
-        }
+  const sortedIndicesByStep = useMemo(() => {
+    const result: number[][] = [];
+    const completed = new Set<number>();
+    for (const step of steps) {
+      if (step.type === 'complete') {
+        for (const index of step.indices) completed.add(index);
       }
+      result.push(Array.from(completed));
     }
-    return completedIndices;
-  }, [currentStep, controller.currentStepIndex, steps]);
+    return result;
+  }, [steps]);
+
+  const sortedIndices =
+    currentStep && controller.currentStepIndex >= 0
+      ? sortedIndicesByStep[controller.currentStepIndex] ?? []
+      : [];
 
   const handleGenerateNew = useCallback(() => {
     controller.reset();

@@ -5,7 +5,7 @@ import { CATEGORIES } from '@/core/types';
 
 export default function Home() {
   return (
-    <div className="min-h-full overflow-y-auto bg-gradient-to-b from-white via-gray-50/50 to-gray-100/80 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900/80">
+    <div className="h-full min-h-[calc(100vh-3.5rem)] overflow-y-auto overflow-x-hidden bg-gradient-to-b from-white via-gray-50/50 to-gray-100/80 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900/80">
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-12 pb-14 sm:pt-20 sm:pb-20">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
